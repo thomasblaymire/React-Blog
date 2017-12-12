@@ -1,0 +1,7 @@
+Topics
+=======
+
+
+AJAX Requests
+=======
+To perform an Ajax request you have to have two packages installed ajax-promise and axios
