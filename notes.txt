@@ -5,3 +5,8 @@ Topics
 AJAX Requests
 =======
 To perform an Ajax request you have to have two packages installed ajax-promise and axios
+
+LifeCycle Method
+=======
+Function called on a component class that is automatically called by React.
+ComponentDidMount will run as soon as the component is loaded in the DOM.
