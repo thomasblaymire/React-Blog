@@ -1,7 +1,6 @@
 Topics
 =======
 
-
 AJAX Requests
 =======
 To perform an Ajax request you have to have two packages installed ajax-promise and axios
@@ -10,3 +9,21 @@ LifeCycle Method
 =======
 Function called on a component class that is automatically called by React.
 ComponentDidMount will run as soon as the component is loaded in the DOM.
+
+Routing Switch
+=======
+Switch will look at all of the routes inside it, it will only map the first to the specific URL.
+Always use this to resolve issues with components appearing with each other.
+
+React Router Links
+=======
+We don't want another HTTP request via an <a href="">
+We use {Link} from 'react-router-dom'
+<Link className="btn btn-primary" to="/posts/new"> Add a post</Link>
+
+Redux Form Library
+=======
+The component is a function that renders the JSX the field only deals with
+ReduxForm. <Field name="title" component={this.renderTitleField}/>
+its better to create a helper function that will sit above render method.
+{...field.input} Is an object that contains various event handlers onBlur onChange etc.
