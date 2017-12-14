@@ -1,20 +1,21 @@
-import _ from 'lodash';
-import { FETCH_POSTS, FETCH_POST } from '../actions';
+import _ from "lodash";
+import { FETCH_POSTS, FETCH_POST, DELETE_POST } from "../actions";
 
-export default function( state = {}, action) {
-  switch (action.type) {
+export default function(state = {}, action) {
+    switch (action.type) {
+        case FETCH_POSTS:
+            return _.mapKeys(action.payload.data, "id");
 
-    case FETCH_POSTS:
-      return _.mapKeys(action.payload.data, 'id');
+        case DELETE_POST:
+            return _.omit(state, action.payload);
 
-    case FETCH_POST:
-        return { ...state, [action.payload.data.id]: action.payload.data };
+        case FETCH_POST:
+            return { ...state, [action.payload.data.id]: action.payload.data };
 
-    default:
-      return state;
-  }
+        default:
+            return state;
+    }
 }
-
 
 /* In the reducer Fetch Post we reference the current post via action.payload.data
    - Then we set the new state to the current state by ...state
@@ -27,3 +28,6 @@ export default function( state = {}, action) {
            return newState;
 
     ES6:   return { ...state, [action.payload.data.id]: action.payload.data };
+
+
+    */
